@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="./books.js" defer></script>
+</head>
+<body>
+    
+<form action="./library.html" method="post" id="bookDetails">
+
+    <fieldset>
+        <legend>Book Details</legend>
+            <div>       
+                <label for="bookTitle">Book Title</label>
+                <input type="text" name="bookTitle" id="bookTitle">
+            </div>
+            <div>
+                <label for="bookAuthor">Author</label>
+                <input type="text" name="bookAuthor" id="bookAuthor">
+            </div>
+            <div>
+                <label for="pages">Number of Pages</label>
+                <input type="number" name="pageNo" id="pageNo">
+            </div>
+            <div>
+                <label for="read">Read</label>
+                <input type="radio" id="read" name="read">
+                <label for="notRead">Not Read</label>
+                <input type="radio" id="notRead" name="read">    
+            </div>
+            <!-- might need to use a check box, instead of a radio here. -->
+
+            <button type="button" id="addBook">Submit</button>
+            <button type="reset">Reset</button>
+    </fieldset>
+</form>
+
+<div class="library">
+    
+</div>
+
+</body>
+</html>
