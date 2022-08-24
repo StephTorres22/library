@@ -1,0 +1,13 @@
+.book{
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    border-color: black;
+    font-size: large;
+
+}
+
+.library{
+    font-size: large;
+}

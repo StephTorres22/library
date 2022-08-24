@@ -1,7 +1,11 @@
 /* 
 LIBRARY
 
--Create form - done, basic html form
+-Create form - done, basic html form DONE
+
+-Look at default button behaviour of buttons inside of form
+
+-Validation, inputs must be entered
 
 -Data from form to be submitted as an instance of Book
 
@@ -16,6 +20,8 @@ LIBRARY
 
 -Each index of library to be displayed 
 
+    for i in myLibrary create a DOM element
+
 -Should be able to add to library, search/filter through library, and delete a book from library.
 
 
@@ -25,8 +31,7 @@ const bookTitle = document.getElementById('bookTitle');
 const bookAuthor = document.getElementById('bookAuthor');
 const pageNo = document.getElementById('pageNo');
 const addBookButton = document.getElementById('addBook');
-const library = document.getElementsByClassName('.library');
-
+const library = document.querySelector('.library');
 
 
 
@@ -51,11 +56,49 @@ function addBookToLibrary(){
 
     myLibrary.push(Book); //adds each new object instance to myLibrary
     document.querySelector('form').reset();//resets the form after each entry.
-    console.log(myLibrary); //displays library.
+    console.log(myLibrary); //displays library in console.
+   
+   
+    library.textContent = JSON.stringify(myLibrary);
+    
+    
+    for(i in myLibrary){
+        let newBook = document.createElement('div')
+        library.appendChild(newBook);
+        newBook.classList.add('book');
+        let pTitle = document.createElement('p');
+        let pAuthor = document.createElement('p');
+        let pPages = document.createElement('p');
+        newBook.appendChild(pTitle);
+        newBook.appendChild(pAuthor);
+        newBook.appendChild(pPages);//there must be a more concise way to do this
+        pTitle.innerText = "Title: " + `${myLibrary[i].title}`;
+        pAuthor.innerText = "Author: " + `${myLibrary[i].author}`;
+        pPages.innerText = "Number of pages: " + `${myLibrary[i].pages}`;
+
+        // could create seperate p elements for each piece of info.
+
+        /* So for each instance of a book, a new div is created within library div.
+            how to acces key value info on individual instances */
+
+    }//this bit doesn't work as i though it might
+
+    /* For each object in library, I want to display a seperate box/tag,
+    with the value to the keys title author and number of pages */
 }
 
 
+//unction displayBook(value, index, array){
 
+   // 
+ //       
+
+
+
+
+    
+    
+//}
 
 
  
@@ -67,28 +110,3 @@ addBookButton.addEventListener('click', addBookToLibrary);
 
 
 
-//const theHobbit = new Book ("The Hobbit", "J.R.R. Tolkien", "295 pages", true)
-
-//console.log(theHobbit.info())
-
-/* not getting the expected outcome */ /* forgot to add () you;re calling a function dummy! */
-
-//console.log(theHobbit.author)
-//console.log(theHobbit.read)
- 
-/* can console.log individual attributes, but this.info function not returning as expected. */
-
-/* function Book(title, author, pages, read){
-
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-
-    this.info = function(){
-       // return title + ", " + author+ ", " + pages + ", " + read + "."
-       return `${title} ${author} ${pages} ${read}`//this also works using placeholders like kotlin but must be in `` 
-       //no punctuation though.
-    }
-
-}  */
