@@ -60,6 +60,8 @@ function addBookToLibrary(){
    
    
     library.textContent = JSON.stringify(myLibrary);
+
+    //split into seperate functions, make it cleaner, eg displayBookData
     
     
     for(i in myLibrary){
@@ -69,14 +71,36 @@ function addBookToLibrary(){
         let pTitle = document.createElement('p');
         let pAuthor = document.createElement('p');
         let pPages = document.createElement('p');
+        let pRead = document.createElement('div');
+        let readCheck = document.createElement('input');
+        readCheck.setAttribute('type', 'checkbox');
+
+        let removeButton = document.createElement('button');
+        removeButton.addEventListener('click', function(){
+            myLibrary.splice([i])
+            library.removeChild(newBook)
+        });
+
+        
         newBook.appendChild(pTitle);
         newBook.appendChild(pAuthor);
         newBook.appendChild(pPages);//there must be a more concise way to do this
-        pTitle.innerText = "Title: " + `${myLibrary[i].title}`;
+        newBook.appendChild(pRead);
+        newBook.appendChild(readCheck);
+        newBook.appendChild(removeButton);
+        pTitle.innerText = "Title: " + `${myLibrary[i].title}`;//change this to Book.title and remover for loop.
         pAuthor.innerText = "Author: " + `${myLibrary[i].author}`;
-        pPages.innerText = "Number of pages: " + `${myLibrary[i].pages}`;
+        pPages.innerText = "Number of pages: " + `${myLibrary[i].pages}`;      
+        pRead.innerText = "Read?: ";
 
-        // could create seperate p elements for each piece of info.
+        //duplicates, doesn't do this when library.textContent = JSON.stringify(myLibrary)
+        //is present above
+
+        //also .splice not working as i imagined
+        
+
+        //just need to add styles so the checkbox is next to Read?:
+
 
         /* So for each instance of a book, a new div is created within library div.
             how to acces key value info on individual instances */
@@ -88,20 +112,6 @@ function addBookToLibrary(){
 }
 
 
-//unction displayBook(value, index, array){
-
-   // 
- //       
-
-
-
-
-    
-    
-//}
-
-
- 
 
 
 addBookButton.addEventListener('click', addBookToLibrary);
