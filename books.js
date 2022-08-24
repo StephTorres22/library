@@ -59,12 +59,12 @@ function addBookToLibrary(){
     console.log(myLibrary); //displays library in console.
    
    
-    library.textContent = JSON.stringify(myLibrary);
+   // library.textContent = JSON.stringify(myLibrary);
 
     //split into seperate functions, make it cleaner, eg displayBookData
     
     
-    for(i in myLibrary){
+    
         let newBook = document.createElement('div')
         library.appendChild(newBook);
         newBook.classList.add('book');
@@ -77,7 +77,7 @@ function addBookToLibrary(){
 
         let removeButton = document.createElement('button');
         removeButton.addEventListener('click', function(){
-            myLibrary.splice([i])
+            myLibrary.splice(Book)
             library.removeChild(newBook)
         });
 
@@ -88,9 +88,9 @@ function addBookToLibrary(){
         newBook.appendChild(pRead);
         newBook.appendChild(readCheck);
         newBook.appendChild(removeButton);
-        pTitle.innerText = "Title: " + `${myLibrary[i].title}`;//change this to Book.title and remover for loop.
-        pAuthor.innerText = "Author: " + `${myLibrary[i].author}`;
-        pPages.innerText = "Number of pages: " + `${myLibrary[i].pages}`;      
+        pTitle.innerText = "Title: " + `${Book.title}`;//change this to Book.title and remover for loop.
+        pAuthor.innerText = "Author: " + `${Book.author}`;
+        pPages.innerText = "Number of pages: " + `${Book.pages}`;      
         pRead.innerText = "Read?: ";
 
         //duplicates, doesn't do this when library.textContent = JSON.stringify(myLibrary)
@@ -109,7 +109,7 @@ function addBookToLibrary(){
 
     /* For each object in library, I want to display a seperate box/tag,
     with the value to the keys title author and number of pages */
-}
+
 
 
 
