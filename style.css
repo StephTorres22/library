@@ -3,13 +3,33 @@
     border-radius: 5px;
     text-align: center;
     color: black;
-    border-color: black;
+    border-color: #999966;
     font-size: large;
+    max-width: 330px; /* once a width is added grid layup is strange 
+    needs play around with abit*/
 
 }
 
 .library{
+    align-content: center;
+    justify-content: center;
+    margin-top: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));/* kevin powell */
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));/* kevin powell */
+    gap: 10px;
     font-size: large;
+}
+
+.remove{
+    color: black;
+    
+    font-size: medium;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.readBox{
+    display: flex;
+    justify-content: center;
 }

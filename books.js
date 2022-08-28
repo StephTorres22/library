@@ -71,44 +71,40 @@ function addBookToLibrary(){
         let pTitle = document.createElement('p');
         let pAuthor = document.createElement('p');
         let pPages = document.createElement('p');
-        let pRead = document.createElement('div');
+        let readDiv = document.createElement('div');
+        readDiv.classList.add('readBox');
+        let pRead = document.createElement('p');
         let readCheck = document.createElement('input');
         readCheck.setAttribute('type', 'checkbox');
 
         let removeButton = document.createElement('button');
+        removeButton.classList.add('remove');
+        removeButton.innerText = 'Remove Book'
         removeButton.addEventListener('click', function(){
             myLibrary.splice(Book)
             library.removeChild(newBook)
-        });
+        }); // can this be arrow?
 
         
         newBook.appendChild(pTitle);
         newBook.appendChild(pAuthor);
         newBook.appendChild(pPages);//there must be a more concise way to do this
-        newBook.appendChild(pRead);
-        newBook.appendChild(readCheck);
+        newBook.appendChild(readDiv);
+        readDiv.appendChild(pRead);
+        readDiv.appendChild(readCheck);
         newBook.appendChild(removeButton);
         pTitle.innerText = "Title: " + `${Book.title}`;//change this to Book.title and remover for loop.
         pAuthor.innerText = "Author: " + `${Book.author}`;
         pPages.innerText = "Number of pages: " + `${Book.pages}`;      
         pRead.innerText = "Read?: ";
 
-        //duplicates, doesn't do this when library.textContent = JSON.stringify(myLibrary)
-        //is present above
-
-        //also .splice not working as i imagined
         
+        
+    }
 
-        //just need to add styles so the checkbox is next to Read?:
+    //length of myLibrary seems to be 0?!
 
-
-        /* So for each instance of a book, a new div is created within library div.
-            how to acces key value info on individual instances */
-
-    }//this bit doesn't work as i though it might
-
-    /* For each object in library, I want to display a seperate box/tag,
-    with the value to the keys title author and number of pages */
+   
 
 
 
