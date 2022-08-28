@@ -5,7 +5,7 @@ LIBRARY
 
 -Look at default button behaviour of buttons inside of form
 
--Validation, inputs must be entered
+-Validation, inputs must be entered 
 
 -Data from form to be submitted as an instance of Book
 
@@ -24,6 +24,7 @@ LIBRARY
 
 -Should be able to add to library, search/filter through library, and delete a book from library.
 
+-Button to add a book, when clicked on want form to pop up
 
 
 */
@@ -34,6 +35,15 @@ const addBookButton = document.getElementById('addBook');
 const library = document.querySelector('.library');
 
 
+function openForm(){
+    document.getElementById('bookDetails').style.display = 'block';
+    //this changes the forms style from display none to block
+    //being invisible to visible.
+}
+
+function closeForm(){
+    document.getElementById('bookDetails').style.display = 'none';
+}
 
 
 
@@ -52,6 +62,10 @@ function addBookToLibrary(){
         eg. title = document.getElementById('bookTitle').value */
 
 
+        /* if using oop would functions be defined within the object itself, how would this work
+        for calling these functions on a button? */
+
+
     }
 
     myLibrary.push(Book); //adds each new object instance to myLibrary
@@ -59,7 +73,8 @@ function addBookToLibrary(){
     console.log(myLibrary); //displays library in console.
    
    
-   // library.textContent = JSON.stringify(myLibrary);
+   // library.textContent = JSON.stringify(myLibrary); 
+   //this lets you see what objects/data are within myLibrary.
 
     //split into seperate functions, make it cleaner, eg displayBookData
     
@@ -110,7 +125,10 @@ function addBookToLibrary(){
 
 
 
-addBookButton.addEventListener('click', addBookToLibrary);
+addBookButton.addEventListener('click', function(){
+    addBookToLibrary()
+    closeForm()
+});
 
 
 

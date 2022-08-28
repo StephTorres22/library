@@ -33,3 +33,14 @@
     display: flex;
     justify-content: center;
 }
+
+/* FORM POP UP MECHANISM */
+
+/* Default form, not on display */
+#bookDetails{
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    
+}
