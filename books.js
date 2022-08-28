@@ -24,7 +24,11 @@ LIBRARY
 
 -Should be able to add to library, search/filter through library, and delete a book from library.
 
--Button to add a book, when clicked on want form to pop up
+-Shouldn't be able to add a book with blank data
+
+-Need to style form so that it looks decent
+
+
 
 
 */
