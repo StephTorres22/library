@@ -89,7 +89,7 @@ class Book{
         readDiv.appendChild(pRead);
         readDiv.appendChild(readCheck);
         newBook.appendChild(removeButton);
-        pTitle.innerText = "Title: " + `${this.title}`;/
+        pTitle.innerText = "Title: " + `${this.title}`;
         pAuthor.innerText = "Author: " + `${this.author}`;
         pPages.innerText = "Number of pages: " + `${this.pages}`;      
         pRead.innerText = "Read?: ";

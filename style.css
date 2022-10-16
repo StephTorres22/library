@@ -15,12 +15,13 @@
     justify-content: center;
     margin-top: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));/* kevin powell */
+    grid-template-columns: repeat( 4, minmax(330px, 1fr));/* kevin powell */
     gap: 10px;
     font-size: large;
 }
 
 .modal{
+    
     border-radius: 10px;
     border: 0;
     height: 300px;
