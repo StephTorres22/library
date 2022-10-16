@@ -20,31 +20,21 @@
     font-size: large;
 }
 
-.remove{
-    color: black;
-    
-    font-size: medium;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 10px;
+.modal{
+    border-radius: 10px;
+    border: 0;
+    height: 300px;
 }
 
-.readBox{
-    display: flex;
-    justify-content: center;
-}
-
-/* FORM POP UP MECHANISM */
-
-/* Default form, not on display */
-#bookDetails{
-    display: none;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    
+.form-container{
+    display: grid;
 }
 
 input{
-    margin-bottom: 5px;
+    margin: 5px 0;
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    border-radius: 10px;
+
 }

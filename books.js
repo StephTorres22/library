@@ -31,59 +31,36 @@ LIBRARY
 
 
 
-*/
+/* */
+const form = document.getElementById('bookDetails')
 const bookTitle = document.getElementById('bookTitle');
 const bookAuthor = document.getElementById('bookAuthor');
 const pageNo = document.getElementById('pageNo');
-const addBookButton = document.getElementById('addBook');
+const addBookButton = document.querySelector('.addBookButton');
+const submitBookButton = document.querySelector('#addBook');
 const library = document.querySelector('.library');
-
-
-function openForm(){
-    document.getElementById('bookDetails').style.display = 'block';
-    //this changes the forms style from display none to block
-    //being invisible to visible.
-}
-
-function closeForm(){
-    document.getElementById('bookDetails').style.display = 'none';
-}
+const modal = document.querySelector('#modal'); //targerts the dialog tag in html
+//dialog tag has loads of functionality straightaway.
 
 
 
+addBookButton.addEventListener('click', () => {
+    modal.showModal();
+}) 
 
 let myLibrary = []
 
-function addBookToLibrary(){
 
-    let Book = {
-        title: bookTitle.value,
-        author: bookAuthor.value,
-        pages: pageNo.value,
+class Book{
 
-        /* watched a Steve Griffith video, in his code he defines the Book object constructor inside his adding function.
-        you don't even need to declare the const bookTitle etc at the top can do it straight in the constructor 
-        eg. title = document.getElementById('bookTitle').value */
-
-
-        /* if using oop would functions be defined within the object itself, how would this work
-        for calling these functions on a button? */
-
-
+    constructor(title, author, pages){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
     }
 
-    myLibrary.push(Book); //adds each new object instance to myLibrary
-    document.querySelector('form').reset();//resets the form after each entry.
-    console.log(myLibrary); //displays library in console.
-   
-   
-   // library.textContent = JSON.stringify(myLibrary); 
-   //this lets you see what objects/data are within myLibrary.
-
-    //split into seperate functions, make it cleaner, eg displayBookData
-    
-    
-    
+    bookDisplay(){
+        console.log(`${this.title}, ${this.author}, ${this.pages}`)
         let newBook = document.createElement('div')
         library.appendChild(newBook);
         newBook.classList.add('book');
@@ -99,12 +76,12 @@ function addBookToLibrary(){
         let removeButton = document.createElement('button');
         removeButton.classList.add('remove');
         removeButton.innerText = 'Remove Book'
-        removeButton.addEventListener('click', function(){
+        removeButton.addEventListener('click', () => {
             myLibrary.splice(Book)
             library.removeChild(newBook)
-        }); // can this be arrow?
+        });
 
-        
+
         newBook.appendChild(pTitle);
         newBook.appendChild(pAuthor);
         newBook.appendChild(pPages);//there must be a more concise way to do this
@@ -112,29 +89,28 @@ function addBookToLibrary(){
         readDiv.appendChild(pRead);
         readDiv.appendChild(readCheck);
         newBook.appendChild(removeButton);
-        pTitle.innerText = "Title: " + `${Book.title}`;//change this to Book.title and remover for loop.
-        pAuthor.innerText = "Author: " + `${Book.author}`;
-        pPages.innerText = "Number of pages: " + `${Book.pages}`;      
+        pTitle.innerText = "Title: " + `${this.title}`;/
+        pAuthor.innerText = "Author: " + `${this.author}`;
+        pPages.innerText = "Number of pages: " + `${this.pages}`;      
         pRead.innerText = "Read?: ";
 
         
-        
     }
+}
 
-    //length of myLibrary seems to be 0?!
+function addBookToLibrary(){
 
-   
+        let newBook = new Book(`${bookTitle.value}`, `${bookAuthor.value}`, parseInt(pageNo.value))
+        myLibrary.push(newBook);
+        newBook.bookDisplay();
 
+    }   
 
-
-
-
-addBookButton.addEventListener('click', function(){
-    addBookToLibrary()
-    closeForm()
-});
-
-
-
+  submitBookButton.addEventListener('click', () => {
+    addBookToLibrary();   
+    modal.close();
+    form.reset();
+    console.log(myLibrary);
+   })
 
 

@@ -12,31 +12,29 @@
 
 <h1>Click on the 'Add Book' button to add a book to your library</h1>
 
-<button type="button" class="add" onclick="openForm()">Add Book</button>
-    
-<form action="./library.html" method="post" id="bookDetails">
+<button type="button" class="addBookButton">Add Book</button>
 
-    <fieldset>
-        <legend>Book Details</legend>
-            <div>       
-                <label for="bookTitle">Book Title</label>
-                <input type="text" name="bookTitle" id="bookTitle" required>
-            </div>
-            <div>
-                <label for="bookAuthor">Author</label>
-                <input type="text" name="bookAuthor" id="bookAuthor" required>
-            </div>
-            <div>
-                <label for="pages">Number of Pages</label>
-                <input type="number" name="pageNo" id="pageNo">
-            </div>
+<dialog class="modal" id="modal">    
+    <form action="./library.html" method="post" id="bookDetails">
+        
+            <legend>Book Details</legend>
+                <div class="form-container">       
+                  
+                    <input type="text" name="bookTitle" id="bookTitle" placeholder="Title" required>
+                
+                
+                    <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author" required>
+                
+                    <input type="number" name="pageNo" id="pageNo" placeholder="Number of Pages">
+                </div>
             
             <!-- might need to use a check box, instead of a radio here. -->
 
-            <button type="button" id="addBook">Add Book</button>
-            <button type="reset">Clear</button>
-    </fieldset>
-</form>
+                <button type="button" class="sumbitBook" id="addBook">Add Book</button>
+                <button type="reset">Clear</button>
+        
+    </form>
+</dialog>
 
 <div class="library">
     
