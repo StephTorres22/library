@@ -17,26 +17,18 @@
 <dialog class="modal" id="modal">   
      
     <form action="./library.html" method="post" id="bookDetails">
-            <div class="form-container">  
-                <legend>Book Details</legend>              
-                  
-                    <input type="text" name="bookTitle" id="bookTitle" placeholder="Title" required>                
-                
-                    <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author" required>
-                
-                    <input type="number" name="pageNo" id="pageNo" placeholder="Number of Pages">
-            </div>
             
-           
-                <div class="button-div">
-                <div>
-                <button type="button" class="sumbitBook" id="addBook">Add Book</button>
-                <button type="reset">Clear</button>
-                </div>
-                <button type="button" class="close">&times</button>
-                </div>
-                
-               
+                <legend>Book Details</legend>     
+
+                <input type="text" name="bookTitle" id="bookTitle" placeholder="Title" required/>          
+                <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author" required/>                
+                <input type="number" name="pageNo" id="pageNo"  placeholder="Number of Pages" required/>          
+            
+                <button type="submit" class="sumbitBook" id="addBook">Add Book</button>
+                     <div class="button-div">    
+                        <button type="reset">Clear</button>                
+                        <button type="button" class="close">&times</button>
+                    </div>                
     </form>
 </dialog>
 

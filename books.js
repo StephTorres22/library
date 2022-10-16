@@ -107,19 +107,28 @@ class Book{
     }
 }
 
-function addBookToLibrary(){
+        const addBookToLibrary = () => {
 
         let newBook = new Book(`${bookTitle.value}`, `${bookAuthor.value}`, parseInt(pageNo.value))
         myLibrary.push(newBook);
         newBook.bookDisplay();
 
-    }   
+    } 
+    
+    const checkFields = () => {
+        
+    }
 
-  submitBookButton.addEventListener('click', () => {
-    addBookToLibrary();   
-    modal.close();
-    form.reset();
-    console.log(myLibrary);
+    submitBookButton.addEventListener('click', () => {
+        //coded in validation as can't seem to get html required attribute to work.
+       if(`${bookTitle.value}` == '' && `${bookTitle.value == ''}`){
+            alert('Please fill in required fields')
+        }else if (`${bookTitle.value}` !== '' && `${bookAuthor.value}` !== ''){ 
+        addBookToLibrary();   
+        modal.close();
+        form.reset();
+        console.log(myLibrary);
+        }
    })
 
 

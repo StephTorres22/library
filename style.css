@@ -110,7 +110,7 @@ input[type='checkbox']{
 }
 
 input[type='checkbox']:checked{
-    accent-color: rgb(155, 247, 18);
+    accent-color: rgb(155, 247, 18);/* changes colour of box once checked */
     cursor: white;
 }
 
