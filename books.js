@@ -41,8 +41,11 @@ const submitBookButton = document.querySelector('#addBook');
 const library = document.querySelector('.library');
 const modal = document.querySelector('#modal'); //targerts the dialog tag in html
 //dialog tag has loads of functionality straightaway.
+const closeButton = document.querySelector('.close');
 
-
+closeButton.addEventListener('click', () => {
+    modal.close();
+})
 
 addBookButton.addEventListener('click', () => {
     modal.showModal();
@@ -86,8 +89,14 @@ class Book{
         newBook.appendChild(pAuthor);
         newBook.appendChild(pPages);//there must be a more concise way to do this
         newBook.appendChild(readDiv);
+        
         readDiv.appendChild(pRead);
         readDiv.appendChild(readCheck);
+        readCheck.addEventListener('click', () =>{
+            readCheck.setAttribute('checked', 'checked')
+        })
+
+        
         newBook.appendChild(removeButton);
         pTitle.innerText = "Title: " + `${this.title}`;
         pAuthor.innerText = "Author: " + `${this.author}`;

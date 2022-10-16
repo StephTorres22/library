@@ -1,12 +1,14 @@
 .book{
-    border-style: solid;
-    border-radius: 5px;
+    border-style: none  ;
+    border-radius: 10px;
+    box-shadow: 0 0 1em rgba(163, 160, 160, 0.3);
     text-align: center;
     color: black;
-    border-color: #999966;
+    
     font-size: large;
     max-width: 330px; /* once a width is added grid layup is strange 
     needs play around with abit*/
+    padding-top: 10px;
 
 }
 
@@ -27,11 +29,24 @@
     height: 300px;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    height: 290px;
+    justify-content: space-between;
+}
+
 .form-container{
     display: grid;
 }
 
+legend{
+    font-size: 1.25em;
+    margin-bottom: 5px;
+}
+
 input{
+    font-size: 1em;
     margin: 5px 0;
     padding: 10px;
     border: 0;
@@ -39,3 +54,63 @@ input{
     border-radius: 10px;
 
 }
+
+.button-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.addBookButton, .sumbitBook{
+    
+    background-color: rgb(155, 247, 18);
+}
+
+.close, .remove {
+    
+    background-color: rgb(250, 6, 6);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.close{
+    font-size: 1.5em;
+}
+
+.remove{
+    margin-bottom: 10px;
+}
+
+.readBox{
+    display: flex;
+    justify-content: center;
+}
+
+div p{
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+div input[type="checkbox"]{
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 15px;
+}
+
+input[type='checkbox']{
+    height: 1em;
+    width: 1em;
+
+}
+
+input[type='checkbox']:checked{
+    accent-color: rgb(155, 247, 18);
+    cursor: white;
+}
+
+

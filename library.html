@@ -17,23 +17,26 @@
 <dialog class="modal" id="modal">   
      
     <form action="./library.html" method="post" id="bookDetails">
-        
-            <legend>Book Details</legend>
-                <div class="form-container">       
+            <div class="form-container">  
+                <legend>Book Details</legend>              
                   
-                    <input type="text" name="bookTitle" id="bookTitle" placeholder="Title" required>
-                
+                    <input type="text" name="bookTitle" id="bookTitle" placeholder="Title" required>                
                 
                     <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author" required>
                 
                     <input type="number" name="pageNo" id="pageNo" placeholder="Number of Pages">
-                </div>
+            </div>
             
-            <!-- might need to use a check box, instead of a radio here. -->
-
+           
+                <div class="button-div">
+                <div>
                 <button type="button" class="sumbitBook" id="addBook">Add Book</button>
                 <button type="reset">Clear</button>
-        
+                </div>
+                <button type="button" class="close">&times</button>
+                </div>
+                
+               
     </form>
 </dialog>
 
